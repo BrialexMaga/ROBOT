@@ -31,7 +31,8 @@ def generate_robot_data():
         uptime_seconds = random.randint(0, 3600)
         uptime_str = time.strftime("%H:%M:%S", time.gmtime(uptime_seconds))
 
-        # Mostrar los datos generados
+        #Mostrar los datos generados
+        """
         print("Robot Status:")
         print(f"Battery Level = {battery_level:.2f}%")
         print(f"Temperature = {temperature:.2f}°C")
@@ -41,6 +42,7 @@ def generate_robot_data():
         print(f"Light Intensity: {light_intensity:.2f}")
         print(f"Humidity: {humidity:.2f}")
         print("----------------------")
+        """
 
         time.sleep(1) #Espera un segundo antes de repetir
 
