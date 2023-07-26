@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- ICON -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="Logo/apple-touch-icon.png"> 
+	<link rel="icon" type="image/png" sizes="32x32" href="Logo/favicon-32x32.png">    
+	<link rel="icon" type="image/png" sizes="16x16" href="Logo/favicon-16x16.png">
+	<link rel="manifest" href="Logo/site.webmanifest">            
+    <!--KEYWORDS-->
+    <meta name="keywords" content="Softserve, Project, Robot, DevOps">
+    <!--DESCRIPTION-->
+    <meta name="description" content="Adopt your very own personal virtual robot and experience the joy of monitoring its real-time status while interacting with it. Just like the virtual pet from your childhood, this robot allows you to observe its key metrics and engage with its activities. Batteries not included!">
+    <title>Robot</title>
+    <!--LINKS-->
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/generalities.css">
+</head>
+
+<body>
+    <main>
+        <div class="sticker">
+            <h1> <!--stiker Hello I'm robot-->
+                    Hello!, I'm
+            </h1>
+            <div class="name">
+                <p>
+                    <script> // Random Robot Name Generator
+
+const nombres = [
+"Manolo", "Byte", "Megatron", "Techtron", "Optimus", "Circuit", "Nano", "PowerDrive", 
+"Titan", "RoboMax", "Cell", "TechWiz", "DataGenius", "InfoSeeker", "CodeWhiz", "BrainWave", 
+"TaskMaster", "Helper", "SmartGenie", "DigitalSage", "Analytica", "Insight", "Prodigy", "SkillCraft"
+];
+
+const complemento = [
+"cabeza de huevo", "el robot", "Bot", "Guru", "Assistant", "Pro", "Buddy", "Companion", 
+"Wizard", "Expert", "Sidekick", "Advisor"
+];
+
+function getRandomElementFromArray(array) {
+  const randomIndex = Math.floor(Math.random() * array.length);
+  return array[randomIndex];
+}
+
+function generateRandomNumber() {
+    Number = Math.floor(Math.random() * 9 + 1) * 1000;
+    if(Number == 9000) {  // Microsoft-Apple Upgrade
+        Number = 10000; 
+    }
+  return Number;
+}
+
+function generateRandomRobotName() {
+  const randomNombre = getRandomElementFromArray(nombres);
+  const randomComplemento = getRandomElementFromArray(complemento);
+  const randomNumero = generateRandomNumber();
+  return `${randomNombre} ${randomComplemento} ${randomNumero}`;
+}
+                        document.write(generateRandomRobotName());
+                    </script>
+                </p>
+            </div>
+        </div>
+        <div class="status"> <!--live stats WIP-->
+            <h2>Status</h2>
+            <div class="metrics">
+                <div class="measure">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#f2f2f2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-battery"><rect width="16" height="10" x="2" y="7" rx="2" ry="2"/><line x1="22" x2="22" y1="11" y2="13"/></svg>
+                    <p class="measure_name">
+                        Batery level
+                    </p>
+                    <p class="measure_value">
+                        100%
+                    </p>  
+                </div>
+                <div class="measure">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#f2f2f2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-thermometer"><path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z"/></svg>
+                    <p class="measure_name">
+                        Temperature
+                    </p>
+                    <p class="measure_value">
+                        28°C
+                    </p>  
+                </div>
+                <div class="measure">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#f2f2f2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-ruler"><path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"/><path d="m14.5 12.5 2-2"/><path d="m11.5 9.5 2-2"/><path d="m8.5 6.5 2-2"/><path d="m17.5 15.5 2-2"/></svg>
+                    <p class="measure_name">
+                        Proximity
+                    </p>
+                    <p class="measure_value">
+                        5.7
+                    </p>  
+                </div>
+                <div class="measure">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#f2f2f2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-aperture"><circle cx="12" cy="12" r="10"/><line x1="14.31" x2="20.05" y1="8" y2="17.94"/><line x1="9.69" x2="21.17" y1="8" y2="8"/><line x1="7.38" x2="13.12" y1="12" y2="2.06"/><line x1="9.69" x2="3.95" y1="16" y2="6.06"/><line x1="14.31" x2="2.83" y1="16" y2="16"/><line x1="16.62" x2="10.88" y1="12" y2="21.94"/></svg>
+                    <p class="measure_name">
+                        camera
+                    </p>
+                    <p class="measure_value">
+                        1.2
+                    </p>  
+                </div>
+                <div class="measure">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#f2f2f2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-radar"><path d="M19.07 4.93A10 10 0 0 0 6.99 3.34"/><path d="M4 6h.01"/><path d="M2.29 9.62A10 10 0 1 0 21.31 8.35"/><path d="M16.24 7.76A6 6 0 1 0 8.23 16.67"/><path d="M12 18h.01"/><path d="M17.99 11.66A6 6 0 0 1 15.77 16.67"/><circle cx="12" cy="12" r="2"/><path d="m13.41 10.59 5.66-5.66"/></svg>
+                    <p class="measure_name">
+                        Ultrasonic sensor
+                    </p>
+                    <p class="measure_value">
+                        123.4
+                    </p>  
+                </div>
+                <div class="measure">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#f2f2f2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
+                    <p class="measure_name">
+                        Light intensity
+                    </p>
+                    <p class="measure_value">
+                        64.2
+                    </p>  
+                </div>
+                <div class="measure">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#f2f2f2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-droplets"><path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"/><path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"/></svg>
+                    <p class="measure_name">
+                        Humedity
+                    </p>
+                    <p class="measure_value">
+                        345.6
+                    </p>  
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <footer><p>Designed by DanEC1211 in Mexico City</p></footer>
+</body>
+
+</html>
