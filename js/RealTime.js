@@ -1,6 +1,8 @@
 function actualizarDatos(){
     $.ajax({
-        url: 'http://localhost:5500/python/main.py', 
+        cache: false,
+        async: true,
+        url: '../python/main.py', 
         success: function(respuesta) {
             // Parsear la respuesta JSON recibida del servidor
             var data = JSON.parse(respuesta);

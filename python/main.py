@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sun Jul 23 21:39:51 2023
-@author: Brialex
-@coauthor: DanEC1211
+Created on Wed Jul 26 18:56:58 2023
+@author: DanEC1211
+based on: main.py by @Brialex 
 """
 
 import random
@@ -10,40 +10,33 @@ import time
 import json
 
 def generate_robot_data():
-    # Declaración de valores iniciales
+    # Declarate initial values
     battery_level = 100.0
     temperature = 25.0
-    sensors = ['Proximity Sensor', 'Temperature Sensor', 'Camera', 'Ultrasonic Sensor']
+    sensors = ['BatteryLevel', 'Temperature', 'ProximitySensor', 'Camera', 'UltrasonicSensor', 'LightIntensity', 'Humidity', 'Uptime']
 
-    # Generado de datos
+    # Data generation
+    sensor_data = {sensor: random.uniform(0, 100) for sensor in sensors}
+
     battery_level += random.uniform(-1, 1)
     battery_level = max(0, min(100, battery_level))
-
-    sensor_data = {sensor: random.uniform(0, 100) for sensor in sensors}
+    sensor_data['BatteryLevel'] = battery_level #Replace the value of the key 'BatteryLevel' with the new value
 
     temperature += random.uniform(-1, 1)
     temperature = max(20, min(30, temperature))
+    sensor_data['Temperature'] = temperature #Replace the value of the key 'Temperature' with the new value
 
-    light_intensity = random.uniform(0, 100)
     humidity = random.uniform(20, 80)
+    sensor_data['Humidity'] = humidity #Replace the value of the key 'Humidity' with the new value
 
-    uptime_seconds = random.randint(0, 3600)
+    uptime_seconds = random.randint(0, 604800)
     uptime_str = time.strftime("%H:%M:%S", time.gmtime(uptime_seconds))
+    sensor_data['Uptime'] = uptime_str #Replace the value of the key 'Uptime' with the new value
 
-    # Crear un diccionario con los datos generados
-    robot_data = {
-        "battery_level": battery_level,
-        "temperature": temperature,
-        "sensor_data": sensor_data,
-        "light_intensity": light_intensity,
-        "humidity": humidity,
-        "uptime_str": uptime_str
-    }
+    return sensor_data #Return the dictionary with the new values
 
-    # Devolver los datos como un objeto JSON
-    return json.dumps(robot_data)
 
 if __name__ == "__main__":
     # Llamamos a la función y mostramos los datos generados en la consola
     data = generate_robot_data()
-    print(data)
+    print(json.dumps(data)) #Convertimos el diccionario a un string en formato JSON
