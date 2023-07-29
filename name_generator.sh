@@ -1,10 +1,21 @@
-#! /bin/bash
+#!/bin/bash
 
-names=("Manolo" "Byte" "Megatron" "Techtron" "Optimus" "Circuit" "Nano" "PowerDrive" "Titan" "RoboMax" "Cell" "TechWiz" "DataGenius" "InfoSeeker" "CodeWhiz" "BrainWave" "TaskMaster" "Helper" "SmartGenie" "DigitalSage" "Analytica" "Insight" "Prodigy" "SkillCraft")
-alias=("cabeza de huevo" "el robot" "Bot" "Guru" "Assistant" "Pro" "Buddy" "Companion" "Wizard" "Expert" "Sidekick" "Advisor")
+nombres=(
+  "Luke" "Leia" "Han" "Solo" "Darth" "Mace" "Windu" "Babu" 
+  "Yoda" "Chewbacca" "Rey" "Kylo" "Ren"  "Finn" "Poe" "Dameron" 
+  "Anakin" "Padmé" "Amidala" "Lando" "Calrissian" "Vader" 
+  "Obi-Wan" "Kenobi" 
+)
 
-random_name=${names[$RANDOM % ${#names[@]} ]}
-random_alias=${alias[$RANDOM % ${#alias[@]} ]}
+complemento=(
+  "Jedi" "Sith" "Wookiee" "Droid" "Skywalker" 
+  "Force" "Falcon" "Star" "Destroyer" "Lightsaber" 
+  "Hoth" "Endor" "Frik" "X-wing" "Death" "Star" 
+  "Millennium"  "Tatooine" 
+)
 
-finalName="${random_name} ${random_alias}"
-echo "Nombre del robot: $finalName"
+echo "La fuerza ha hablado y el nombre de tu robot es... "
+  random_nombre=${nombres[$RANDOM % ${#nombres[@]}]}
+  random_complemento=${complemento[$RANDOM % ${#complemento[@]}]}
+  random_numero=$(( (RANDOM % 9 + 1) * 1000 ))
+  echo "$random_nombre $random_complemento $random_numero"

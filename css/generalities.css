@@ -1,0 +1,89 @@
+*{
+  margin: 0%;
+  padding: 0%;
+  font-family: 'Roboto Regular';
+}
+
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+html{
+  height: 100%;
+  width: 100%;
+}
+
+/*Importación de fuentes*/
+@font-face {
+  font-family: 'Marker';
+  src: url('../Fonts/Permanent_Marker/PermanentMarker-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto Black';
+  src: url('../Fonts/Roboto/Roboto-Black.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto Black Italic';
+  src: url('../Fonts/Roboto/Roboto-BlackItalic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto Bold';
+  src: url('../Fonts/Roboto/Roboto-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto Bold Italic';
+  src: url('../Fonts/Roboto/Roboto-BoldItalic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto Italic';
+  src: url('../Fonts/Roboto/Roboto-Italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto Light';
+  src: url('../Fonts/Roboto/Roboto-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto Light Italic';
+  src: url('../Fonts/Roboto/Roboto-LightItalic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto Medium';
+  src: url('../Fonts/Roboto/Roboto-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto Medium Italic';
+  src: url('../Fonts/Roboto/Roboto-MediumItalic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto Regular';
+  src: url('../Fonts/Roboto/Roboto-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto Thin';
+  src: url('../Fonts/Roboto/Roboto-Thin.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto Thin Italic';
+  src: url('../Fonts/Roboto/Roboto-ThinItalic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat Bold';
+  src: url('../Fonts/Montserrat/Montserrat-Bold.ttf') format('truetype');
+}
+
+.hidden {
+  display: none !important;
+}
