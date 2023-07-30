@@ -1,28 +1,38 @@
-function actualizarDatos(){
-    $.ajax({
-        cache: false,
-        async: true,
-        url: '../python/main.py', 
-        success: function(respuesta) {
-            // Parsear la respuesta JSON recibida del servidor
-            var data = JSON.parse(respuesta);
+function getRobotData() {
+    // Creating a new XMLHttpRequest
+    const xhr = new XMLHttpRequest();
 
-            // Mostrar los datos en la página web
-            $('#battery_level').text('Battery Level: ' + data.battery_level.toFixed(2) + '%');
-            $('#temperature').text('Temperature: ' + data.temperature.toFixed(2) + '°C');
+    // Configurar la solicitud
+    xhr.open('GET', '/robot-data', true);
 
-            // Mostrar los datos de sensor_data
-            for (var sensor in data.sensor_data) {
-                $('#' + sensor).text(sensor + ': ' + data.sensor_data[sensor].toFixed(2));
+    // Response Event Listener
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                const data = JSON.parse(xhr.responseText);
+
+                // Display the data
+                document.getElementById('batteryLevel').innerText = `Battery Level: ${data.BatteryLevel}%`;
+                document.getElementById('temperature').innerText = `Temperature: ${data.Temperature}°C`;
+                document.getElementById('proximitySensor').innerText = `Proximity Sensor: ${data.ProximitySensor}`;
+                document.getElementById('camera').innerText = `Camera: ${data.Camera}`;
+                document.getElementById('ultrasonicsensor').innerText = `Camera: ${data.UltrasonicSensor}`;
+                document.getElementById('lightintensity').innerText = `Camera: ${data.LightIntensity}`;
+                document.getElementById('humidity').innerText = `Camera: ${data.Humidity}`;
+                document.getElementById('uptime').innerText = `Camera: ${data.Uptime}`;
+
+            } else {
+                console.error('Error al obtener los datos del robot:', xhr.status, xhr.statusText);
             }
-
-            $('#light_intensity').text('Light Intensity: ' + data.light_intensity.toFixed(2));
-            $('#humidity').text('Humidity: ' + data.humidity.toFixed(2));
-            $('#uptime_str').text('Uptime: ' + data.uptime_str);
         }
-    });
+    };
+
+    // Send the request to the server
+    xhr.send();
 }
 
-setInterval(function(){
-    actualizarDatos();
-}, 1000); // Actualizar cada 1 segundo (1000 ms)
+// fist call to the function
+getRobotData();
+
+// loop the function
+setInterval(getRobotData, 1000);
