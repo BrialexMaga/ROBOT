@@ -10,16 +10,15 @@ function getRobotData() {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
                 const data = JSON.parse(xhr.responseText);
-
                 // Display the data
-                document.getElementById('batteryLevel').innerText = `Battery Level: ${data.BatteryLevel}%`;
-                document.getElementById('temperature').innerText = `Temperature: ${data.Temperature}°C`;
-                document.getElementById('proximitySensor').innerText = `Proximity Sensor: ${data.ProximitySensor}`;
-                document.getElementById('camera').innerText = `Camera: ${data.Camera}`;
-                document.getElementById('ultrasonicsensor').innerText = `Camera: ${data.UltrasonicSensor}`;
-                document.getElementById('lightintensity').innerText = `Camera: ${data.LightIntensity}`;
-                document.getElementById('humidity').innerText = `Camera: ${data.Humidity}`;
-                document.getElementById('uptime').innerText = `Camera: ${data.Uptime}`;
+                document.getElementById('batterylevel').innerText = `${data.BatteryLevel}%`;
+                document.getElementById('temperature').innerText = `${data.Temperature}°C`;
+                document.getElementById('proximitysensor').innerText = `${data.ProximitySensor}`;
+                document.getElementById('camera').innerText = `${data.Camera}`;
+                document.getElementById('ultrasonicsensor').innerText = `${data.UltrasonicSensor}`;
+                document.getElementById('lightintensity').innerText = `${data.LightIntensity}`;
+                document.getElementById('humidity').innerText = `${data.Humidity}`;
+                document.getElementById('uptime').innerText = `${data.Uptime}`;
 
             } else {
                 console.error('Error al obtener los datos del robot:', xhr.status, xhr.statusText);
@@ -31,8 +30,9 @@ function getRobotData() {
     xhr.send();
 }
 
-// fist call to the function
-getRobotData();
-
 // loop the function
-setInterval(getRobotData, 1000);
+$( document ).ready(function() {
+    setInterval(getRobotData, 1000);
+});
+
+
