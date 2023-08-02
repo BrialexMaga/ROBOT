@@ -1,6 +1,9 @@
 body{
   height: 100%;
-  background: linear-gradient(315deg, #6d23aa, #0b54bf);
+  background-image: url('https://p4.wallpaperbetter.com/wallpaper/670/883/685/plexus-atoms-neutrons-electrons-wallpaper-preview.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -134,17 +137,24 @@ footer{
 .container img {
   width: 100%;
 }
+.container__robot{
+  padding-left: 20rem;
+}
 
 .commands-viewer {
   width: 100%;
 }
 
 .commands-buttons {
+  background-color: #b7b7b767;
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  border: 2px solid #ff00ee;
+  
+  
 }
 
 .commands-buttons h2 {
@@ -153,12 +163,69 @@ footer{
   margin-bottom: 10px;
 }
 
-.commands-buttons button {
+.action {
+  color: #f2f2f2;
+  background-color: #a40595;
+  text-transform: uppercase;
   width: 30%;
   font-size: 1rem;
   padding: 5px;
   margin: 5px 0;
   border-radius: 15px;
   border: none;
+  transition: background-color .3s ease;
+  transition: font-size .3s ease;
+}
+.action:hover{
+  font-size: 1.4rem;
   cursor: pointer;
+  background-color: #ff00c8;
+}
+.tituloac{
+  font-size: 2rem;
+  color: #f2f2f2;
+  text-transform: uppercase;
+}
+.terminal {
+  display: flex;
+  justify-content: right;
+  width: 400px;
+  height: 300px;
+  border: 2px solid #ff00ee;
+  border-radius: 5px;
+  background-color: #000000;
+  padding: 10px;
+  overflow-y: auto;
+}
+.container__term {
+  
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.containers{
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  align-items:flex-end;
+  padding-right: 10rem;
+}
+.titulo {
+  font-family: 'Inconsolata', monospace;
+  color: #00ff00;
+  margin: 0;
+}
+
+.comando {
+  font-family: 'Inconsolata', monospace;
+  color: #ffffff;
+  margin: 0;
+}
+
+.resultado {
+  font-family: 'Inconsolata', monospace;
+  color: #00ff00;
+  margin: 0;
 }

@@ -15,6 +15,9 @@
     <meta name="description" content="Adopt your very own personal virtual robot and experience the joy of monitoring its real-time status while interacting with it. Just like the virtual pet from your childhood, this robot allows you to observe its key metrics and engage with its activities. Batteries not included!">
     <title>Robot</title>
     <!--LINKS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&family=Krub:wght@400;700&family=Oxanium:wght@300&family=Staatliches&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/generalities.css">
     <script type='text/javascript' src='js/NameGenerator.js'></script>
@@ -108,25 +111,41 @@
             </div>
         </div>
 
-        <div class="container">
-            <img src="https://alfabetizaciondigital.redem.org/wp-content/uploads/2017/08/robot2-scaled.jpg" alt="">
+        <div class="container__robot">
+            <img src="images/3q63.gif" alt="">
             <!-- <img src="" alt=""> -->
         </div>
-
+        <div class="containers">
         <div class="container">
             <div class="commands-viewer">
                 <!-- Aquí se muestran los comando a ejecutar -->
             </div>
 
+            <div class="container__term">
+                <div class="terminal">
+                    <h2 class="titulo">Executed commands:</h2>
+                        <pre class="comando">Usuario: $ ls</pre>
+                        <pre class="resultado">archivo1.txt archivo2.txt carpeta1 carpeta2</pre>
+                        <pre class="comando">Usuario: $ cd carpeta1</pre>
+                        <pre class="comando">Usuario: /carpeta1$ cat archivo1.txt</pre>
+                        <pre class="resultado">Contenido del archivo 1...</pre>
+                        <pre class="comando">Usuario: /carpeta1$ exit</pre>
+
+                        <h2 class="titulo">Action 1:</h2>
+                        <pre class="comando">Usuario: $ git commit -m "Mensaje del commit"</pre>
+                        <pre class="resultado">Commit realizado correctamente</pre>
+                </div>
+
             <div class="commands-buttons">
-                <h2>Robot Actions 🔥</h2>
-                <button type="button">Comando</button>
-                <button type="button">Comando</button>
-                <button type="button">Comando</button>
-                <button type="button">Comando</button>
-                <button type="button">Comando</button>
+                <h2 class=" tituloac">Robot Actions 🔥</h2>
+                <input class="action" type="submit" value="Action 1">
+                <input class="action" type="submit" value="Action 2">
+                <input class="action" type="submit" value="Action 3">
+                <input class="action" type="submit" value="Action 4">
+                <input class="action" type="submit" value="Action 5">
             </div>
         </div>
+    </div>
 
     </main>
     <footer><p>Designed by DanEC1211 but not in California</p></footer>
