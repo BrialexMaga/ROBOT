@@ -17,8 +17,6 @@
     <!--LINKS-->
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/generalities.css">
-    <script type='text/javascript' src='/js/NameGenerator.js'></script>
-    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
 </head>
 
 <body>
@@ -28,10 +26,8 @@
                 Hello!, I'm
             </h1>
             <div class="name">
-                <p>
-                    <script> 
-                        document.write(generateRandomRobotName());
-                    </script>
+                <p id="namerobot">
+                    
                 </p>
             </div>
         </div>
@@ -115,6 +111,9 @@
         </div>
     </main>
     <footer><p>Designed by DanEC1211 but not in California</p></footer>
+    <!--SCRIPTS-->
+    <script type='text/javascript' src='/js/NameGenerator.js'></script>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script type='text/javascript' src='/js/RealTime.js'></script>
 </body>
 

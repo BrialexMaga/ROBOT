@@ -30,3 +30,5 @@ function generateRandomRobotName() {
   const randomNumero = generateRandomNumber();
   return `${randomNombre} ${randomComplemento} ${randomNumero}`;
 }
+
+document.getElementById('namerobot').innerText = generateRandomRobotName();
