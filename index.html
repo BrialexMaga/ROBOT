@@ -20,24 +20,14 @@
 </head>
 
 <body>
-    <main>
-        <div class="sticker">
-            <h1> <!--stiker Hello I'm robot-->
-                Hello!, I'm
-            </h1>
-            <div class="name">
-                <p id="namerobot">
-                    
-                </p>
-            </div>
-        </div>
+    <aside class="info_real_time">
         <div class="status"> <!--live stats-->
             <h2>Status</h2>
             <div class="metrics">
                 <div class="measure">
                     <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#f2f2f2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-battery"><rect width="16" height="10" x="2" y="7" rx="2" ry="2"/><line x1="22" x2="22" y1="11" y2="13"/></svg>
                     <p class="measure_name">
-                        Batery level
+                        Battery level
                     </p>
                     <p class="measure_value" id="batterylevel">
                         
@@ -91,7 +81,7 @@
                 <div class="measure">
                     <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#f2f2f2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-droplets"><path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"/><path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"/></svg>
                     <p class="measure_name">
-                        Humedity
+                        Humidity
                     </p>
                     <p class="measure_value" id="humidity">
                         
@@ -109,10 +99,55 @@
             </div>
             
         </div>
+        <div class="plug_io">
+            <h2>Plug In / Out </h2>
+            <div class="plug_button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plug-zap"><path d="M6.3 20.3a2.4 2.4 0 0 0 3.4 0L12 18l-6-6-2.3 2.3a2.4 2.4 0 0 0 0 3.4Z"/><path d="m2 22 3-3"/><path d="M7.5 13.5 10 11"/><path d="M10.5 16.5 13 14"/><path d="m18 3-4 4h6l-4 4"/></svg>
+            <svg class="hidden" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-unplug"><path d="m19 5 3-3"/><path d="m2 22 3-3"/><path d="M6.3 20.3a2.4 2.4 0 0 0 3.4 0L12 18l-6-6-2.3 2.3a2.4 2.4 0 0 0 0 3.4Z"/><path d="M7.5 13.5 10 11"/><path d="M10.5 16.5 13 14"/><path d="m12 6 6 6 2.3-2.3a2.4 2.4 0 0 0 0-3.4l-2.6-2.6a2.4 2.4 0 0 0-3.4 0Z"/></svg>
+            <p>Connected</p>
+            </div>
+        </div>
+    </aside>
+    <main>
+        <div class="sticker">
+            <h1> <!--sticker Hello I'm robot-->
+                <span id="presentation">Introducing</span> new
+            </h1>
+            <div class="name">
+                <p id="namerobot">
+
+                </p>
+            </div>
+        </div>
+        <div class="robot_live">
+            <div class="character">
+                <img class="spritesheet" alt="">
+            </div>
+            <div class="control_panel" >
+                <h2>Actions</h2>
+                <div class="Actions">
+                    <div class="movement rightbtn">Right</div>
+                    <div class="movement leftbtn">Left</div>
+                    <div class="movement upbtn">Up</div>
+                    <div class="movement downbtn">Down</div>
+                    <div class="movement hibtn">Hi</div>
+                    <div class="movement yesbtn">Yes</div>
+                    <div class="movement nobtn">No</div>
+                    <div class="movement specialbtn">Special</div>
+                </div>
+            </div>
+        </div>
+        <div class="description">
+            <h2>Description</h2>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed, repudiandae quod aliquid at odit itaque modi impedit unde. Aspernatur repudiandae deserunt optio sit ad itaque consequuntur quam tempora aperiam! Accusantium.
+            </p>
+        </div>
     </main>
     <footer><p>Designed by DanEC1211 but not in California</p></footer>
     <!--SCRIPTS-->
-    <script type='text/javascript' src='/js/NameGenerator.js'></script>
+    <script type="text/javascript" src="/js/CoolsBackgrounds.js"></script>
+    <script type='text/javascript' src='/js/RobotDinamics.js'></script> 
     <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script type='text/javascript' src='/js/RealTime.js'></script>
 </body>
