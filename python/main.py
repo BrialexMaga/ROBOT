@@ -14,24 +14,22 @@ def generate_robot_data():
         sensors = ['BatteryLevel', 'Temperature', 'ProximitySensor', 'Camera', 'UltrasonicSensor', 'LightIntensity', 'Humidity', 'Uptime']
 
         # Data generation
-        sensor_data = {sensor: random.uniform(0, 100) for sensor in sensors}
+        sensor_data = {sensor: round(random.uniform(0, 100),2) for sensor in sensors}
 
         battery_level += random.uniform(-1, 1)
         battery_level = max(0, min(100, battery_level))
-        sensor_data['BatteryLevel'] = battery_level  # Replace the value of the key 'BatteryLevel' with the new value
+        sensor_data['BatteryLevel'] = round(battery_level,2) #Replace the value of the key 'BatteryLevel' with the new value
 
         temperature += random.uniform(-1, 1)
         temperature = max(20, min(30, temperature))
-        sensor_data['Temperature'] = temperature  # Replace the value of the key 'Temperature' with the new value
+        sensor_data['Temperature'] = round(temperature,2) #Replace the value of the key 'Temperature' with the new value
 
         humidity = random.uniform(20, 80)
-        sensor_data['Humidity'] = humidity  # Replace the value of the key 'Humidity' with the new value
+        sensor_data['Humidity'] = round(humidity,2) #Replace the value of the key 'Humidity' with the new value
 
         uptime_seconds = random.randint(0, 604800)
         uptime_str = time.strftime("%H:%M:%S", time.gmtime(uptime_seconds))
-        sensor_data['Uptime'] = uptime_str  # Replace the value of the key 'Uptime' with the new value
-
-        #raise KeyError("This is an example error to check the logs.") 
+        sensor_data['Uptime'] = uptime_str #Replace the value of the key 'Uptime' with the new value
     
         logging.info("Robot data was generated successfully.")
 
