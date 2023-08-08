@@ -15,140 +15,143 @@
     <meta name="description" content="Adopt your very own personal virtual robot and experience the joy of monitoring its real-time status while interacting with it. Just like the virtual pet from your childhood, this robot allows you to observe its key metrics and engage with its activities. Batteries not included!">
     <title>Robot</title>
     <!--LINKS-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&family=Krub:wght@400;700&family=Oxanium:wght@300&family=Staatliches&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/generalities.css">
-    <script type='text/javascript' src='js/NameGenerator.js'></script>
-    <!-- <script type='text/javascript' src='js/RealTime.js'></script> -->
-    <!--<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/generalities.css">
 </head>
 
 <body>
-    <main>
-
-        <div class="container container-1">
-            <div class="sticker">
-                <h1> <!--stiker Hello I'm robot-->
-                        Hello!, I'm
-                </h1>
-                <div class="name">
-                    <p>
-                        <script> 
-                            document.write(generateRandomRobotName());
-                        </script>
+    <aside class="info_real_time">
+        <div class="status"> <!--live stats-->
+            <h2>Status</h2>
+            <div class="metrics">
+                <div class="measure">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#f2f2f2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-battery"><rect width="16" height="10" x="2" y="7" rx="2" ry="2"/><line x1="22" x2="22" y1="11" y2="13"/></svg>
+                    <p class="measure_name">
+                        Battery level
                     </p>
+                    <p class="measure_value" id="batterylevel">
+                        
+                    </p>  
+                </div>
+                <div class="measure">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#f2f2f2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-thermometer"><path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z"/></svg>
+                    <p class="measure_name">
+                        Temperature
+                    </p>
+                    <p class="measure_value" id="temperature">
+                        
+                    </p>  
+                </div>
+                <div class="measure">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#f2f2f2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-ruler"><path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"/><path d="m14.5 12.5 2-2"/><path d="m11.5 9.5 2-2"/><path d="m8.5 6.5 2-2"/><path d="m17.5 15.5 2-2"/></svg>
+                    <p class="measure_name">
+                        Proximity
+                    </p>
+                    <p class="measure_value" id="proximitysensor">
+                        
+                    </p>  
+                </div>
+                <div class="measure">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#f2f2f2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-aperture"><circle cx="12" cy="12" r="10"/><line x1="14.31" x2="20.05" y1="8" y2="17.94"/><line x1="9.69" x2="21.17" y1="8" y2="8"/><line x1="7.38" x2="13.12" y1="12" y2="2.06"/><line x1="9.69" x2="3.95" y1="16" y2="6.06"/><line x1="14.31" x2="2.83" y1="16" y2="16"/><line x1="16.62" x2="10.88" y1="12" y2="21.94"/></svg>
+                    <p class="measure_name">
+                        Camera
+                    </p>
+                    <p class="measure_value" id="camera">
+                        
+                    </p>  
+                </div>
+                <div class="measure">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#f2f2f2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-radar"><path d="M19.07 4.93A10 10 0 0 0 6.99 3.34"/><path d="M4 6h.01"/><path d="M2.29 9.62A10 10 0 1 0 21.31 8.35"/><path d="M16.24 7.76A6 6 0 1 0 8.23 16.67"/><path d="M12 18h.01"/><path d="M17.99 11.66A6 6 0 0 1 15.77 16.67"/><circle cx="12" cy="12" r="2"/><path d="m13.41 10.59 5.66-5.66"/></svg>
+                    <p class="measure_name">
+                        Ultrasonic sensor
+                    </p>
+                    <p class="measure_value" id="ultrasonicsensor">
+                        
+                    </p>  
+                </div>
+                <div class="measure">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#f2f2f2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
+                    <p class="measure_name">
+                        Light intensity
+                    </p>
+                    <p class="measure_value" id="lightintensity">
+                        
+                    </p>  
+                </div>
+                <div class="measure">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#f2f2f2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-droplets"><path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"/><path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"/></svg>
+                    <p class="measure_name">
+                        Humidity
+                    </p>
+                    <p class="measure_value" id="humidity">
+                        
+                    </p>  
+                </div>
+                <div class="measure">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-hourglass"><path d="M5 22h14"/><path d="M5 2h14"/><path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22"/><path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/></svg>
+                    <p class="measure_name">
+                        Uptime
+                    </p>
+                    <p class="measure_value" id="uptime">
+                        
+                    </p>  
                 </div>
             </div>
-            <div class="status"> <!--live stats WIP-->
-                <h2>Status</h2>
-                <div class="metrics">
-                    <div class="measure">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#f2f2f2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-battery"><rect width="16" height="10" x="2" y="7" rx="2" ry="2"/><line x1="22" x2="22" y1="11" y2="13"/></svg>
-                        <p class="measure_name">
-                            Batery level
-                        </p>
-                        <p class="measure_value" id="BatteryLevel">
-                            100%
-                        </p>  
-                    </div>
-                    <div class="measure">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#f2f2f2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-thermometer"><path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z"/></svg>
-                        <p class="measure_name">
-                            Temperature
-                        </p>
-                        <p class="measure_value" id="Temperature">
-                            26°C
-                        </p>  
-                    </div>
-                    <div class="measure">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#f2f2f2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-ruler"><path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"/><path d="m14.5 12.5 2-2"/><path d="m11.5 9.5 2-2"/><path d="m8.5 6.5 2-2"/><path d="m17.5 15.5 2-2"/></svg>
-                        <p class="measure_name">
-                            Proximity
-                        </p>
-                        <p class="measure_value" id="ProximitySensor">
-                            5.7
-                        </p>  
-                    </div>
-                    <div class="measure">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#f2f2f2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-aperture"><circle cx="12" cy="12" r="10"/><line x1="14.31" x2="20.05" y1="8" y2="17.94"/><line x1="9.69" x2="21.17" y1="8" y2="8"/><line x1="7.38" x2="13.12" y1="12" y2="2.06"/><line x1="9.69" x2="3.95" y1="16" y2="6.06"/><line x1="14.31" x2="2.83" y1="16" y2="16"/><line x1="16.62" x2="10.88" y1="12" y2="21.94"/></svg>
-                        <p class="measure_name">
-                            Camera
-                        </p>
-                        <p class="measure_value" id="Camera">
-                            1.2
-                        </p>  
-                    </div>
-                    <div class="measure">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#f2f2f2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-radar"><path d="M19.07 4.93A10 10 0 0 0 6.99 3.34"/><path d="M4 6h.01"/><path d="M2.29 9.62A10 10 0 1 0 21.31 8.35"/><path d="M16.24 7.76A6 6 0 1 0 8.23 16.67"/><path d="M12 18h.01"/><path d="M17.99 11.66A6 6 0 0 1 15.77 16.67"/><circle cx="12" cy="12" r="2"/><path d="m13.41 10.59 5.66-5.66"/></svg>
-                        <p class="measure_name">
-                            Ultrasonic sensor
-                        </p>
-                        <p class="measure_value" id="UltrasonicSensor">
-                            123.4
-                        </p>  
-                    </div>
-                    <div class="measure">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#f2f2f2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
-                        <p class="measure_name">
-                            Light intensity
-                        </p>
-                        <p class="measure_value" id="LightIntensity">
-                            64.2
-                        </p>  
-                    </div>
-                    <div class="measure">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#f2f2f2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-droplets"><path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"/><path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"/></svg>
-                        <p class="measure_name">
-                            Humedity
-                        </p>
-                        <p class="measure_value" id="Humedity">
-                            345.6
-                        </p>  
-                    </div>
+            
+        </div>
+        <div class="plug_io">
+            <h2>Plug In / Out </h2>
+            <div class="plug_button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plug-zap"><path d="M6.3 20.3a2.4 2.4 0 0 0 3.4 0L12 18l-6-6-2.3 2.3a2.4 2.4 0 0 0 0 3.4Z"/><path d="m2 22 3-3"/><path d="M7.5 13.5 10 11"/><path d="M10.5 16.5 13 14"/><path d="m18 3-4 4h6l-4 4"/></svg>
+            <svg class="hidden" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-unplug"><path d="m19 5 3-3"/><path d="m2 22 3-3"/><path d="M6.3 20.3a2.4 2.4 0 0 0 3.4 0L12 18l-6-6-2.3 2.3a2.4 2.4 0 0 0 0 3.4Z"/><path d="M7.5 13.5 10 11"/><path d="M10.5 16.5 13 14"/><path d="m12 6 6 6 2.3-2.3a2.4 2.4 0 0 0 0-3.4l-2.6-2.6a2.4 2.4 0 0 0-3.4 0Z"/></svg>
+            <p>Connected</p>
+            </div>
+        </div>
+    </aside>
+    <main>
+        <div class="sticker">
+            <h1> <!--sticker Hello I'm robot-->
+                <span id="presentation">Introducing</span> new
+            </h1>
+            <div class="name">
+                <p id="namerobot">
+
+                </p>
+            </div>
+        </div>
+        <div class="robot_live">
+            <div class="character">
+                <img class="spritesheet" alt="">
+            </div>
+            <div class="control_panel" >
+                <h2>Actions</h2>
+                <div class="Actions">
+                    <div class="movement rightbtn">Right</div>
+                    <div class="movement leftbtn">Left</div>
+                    <div class="movement upbtn">Up</div>
+                    <div class="movement downbtn">Down</div>
+                    <div class="movement hibtn">Hi</div>
+                    <div class="movement yesbtn">Yes</div>
+                    <div class="movement nobtn">No</div>
+                    <div class="movement specialbtn">Special</div>
                 </div>
             </div>
         </div>
-
-        <div class="container__robot">
-            <img src="images/3q63.gif" alt="">
-            <!-- <img src="" alt=""> -->
-        </div>
-        <div class="containers">
-        <div class="container">
-            <div class="commands-viewer">
-                <!-- Aquí se muestran los comando a ejecutar -->
-            </div>
-
-            <div class="container__term">
-                <div class="terminal">
-                    <h2 class="titulo">Executed commands:</h2>
-                        <pre class="comando">Usuario: $ ls</pre>
-                        <pre class="resultado">archivo1.txt archivo2.txt carpeta1 carpeta2</pre>
-                        <pre class="comando">Usuario: $ cd carpeta1</pre>
-                        <pre class="comando">Usuario: /carpeta1$ cat archivo1.txt</pre>
-                        <pre class="resultado">Contenido del archivo 1...</pre>
-                        <pre class="comando">Usuario: /carpeta1$ exit</pre>
-
-                        <h2 class="titulo">Action 1:</h2>
-                        <pre class="comando">Usuario: $ git commit -m "Mensaje del commit"</pre>
-                        <pre class="resultado">Commit realizado correctamente</pre>
-                </div>
-
-            <div class="commands-buttons">
-                <h2 class=" tituloac">Robot Actions 🔥</h2>
-                <input class="action" type="submit" value="Action 1">
-                <input class="action" type="submit" value="Action 2">
-                <input class="action" type="submit" value="Action 3">
-                <input class="action" type="submit" value="Action 4">
-                <input class="action" type="submit" value="Action 5">
-            </div>
+        <div class="description">
+            <h2>Description</h2>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed, repudiandae quod aliquid at odit itaque modi impedit unde. Aspernatur repudiandae deserunt optio sit ad itaque consequuntur quam tempora aperiam! Accusantium.
+            </p>
         </div>
     </div>
 
     </main>
     <footer><p>Designed by DanEC1211 but not in California</p></footer>
+    <!--SCRIPTS-->
+    <script type="text/javascript" src="/js/CoolsBackgrounds.js"></script>
+    <script type='text/javascript' src='/js/RobotDinamics.js'></script> 
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script type='text/javascript' src='/js/RealTime.js'></script>
 </body>
 
 </html>
