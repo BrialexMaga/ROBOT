@@ -1,6 +1,6 @@
 # ROBOT
 
-Breve descripción o introducción sobre el proyecto.
+Este proyecto se centra en el desarrollo de un sistema de control para un robot simulado, que incluye una interfaz web en tiempo real para monitorear su estado y un panel de control para enviar comandos. Utiliza el framework Express.js para el backend y tecnologías web modernas para la interfaz de usuario.
 
 ## Requisitos
 
@@ -16,7 +16,7 @@ Sigue estos pasos para instalar y configurar el proyecto:
 1. Clona este repositorio en tu máquina local:
 
    ```bash
-   git clone https://github.com/tu-usuario/tu-proyecto.git
+   git clone https://github.com/BrialexMaga/ROBOT.git
 
 2. Navega al directorio del proyecto:
     
