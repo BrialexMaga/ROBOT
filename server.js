@@ -5,17 +5,17 @@ const path = require('path');
 const app = express();
 const port = 3000;
 
-app.use(express.static(path.join(__dirname, '..', '..', '..','ROBOT'))); //setting the public folder as static
+app.use(express.static(path.join(__dirname, '..','ROBOT'))); //setting the public folder as static
 
 // Route to get the index page
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', '..','index.html'));
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 // setting the function to get the data from the python script
 app.get('/robot-data', (req, res) => {
     // building the path to the python script
-    const pythonScriptPath = path.join(__dirname, '..', '..', 'python', 'main.py');
+    const pythonScriptPath = path.join(__dirname,  'python', 'main.py');
 
     exec(`py ${pythonScriptPath}`, (error, stdout) => {
         if (error) {
