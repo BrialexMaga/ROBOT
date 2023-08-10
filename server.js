@@ -17,6 +17,8 @@ app.get('/robot-data', (req, res) => {
     // building the path to the python script
     const pythonScriptPath = path.join(__dirname, 'public', 'python', 'main.py');
 
+    //This commented line doesn't work in the container, please change if you want to run without docker.
+    //exec(`py ${pythonScriptPath}`, (error, stdout) => {
     exec(`python3 ${pythonScriptPath}`, (error, stdout) => {
         if (error) {
             console.error('Error al ejecutar el script de Python:', error);
