@@ -5,7 +5,7 @@ const path = require('path');
 const app = express();
 const port = 3000;
 
-app.use(express.static(path.join(__dirname, '..','ROBOT'))); //setting the public folder as static
+app.use(express.static(path.join(__dirname, 'public'))); //setting the public folder as static
 
 // Route to get the index page
 app.get('/', (req, res) => {
@@ -15,9 +15,9 @@ app.get('/', (req, res) => {
 // setting the function to get the data from the python script
 app.get('/robot-data', (req, res) => {
     // building the path to the python script
-    const pythonScriptPath = path.join(__dirname,  'python', 'main.py');
+    const pythonScriptPath = path.join(__dirname, 'public', 'python', 'main.py');
 
-    exec(`py ${pythonScriptPath}`, (error, stdout) => {
+    exec(`python3 ${pythonScriptPath}`, (error, stdout) => {
         if (error) {
             console.error('Error al ejecutar el script de Python:', error);
             res.status(500).json({ error: 'Error al generar los datos del robot' });
