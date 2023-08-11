@@ -2,49 +2,56 @@
 
 Este proyecto se centra en el desarrollo de un sistema de control para un robot simulado, que incluye una interfaz web en tiempo real para monitorear su estado y un panel de control para enviar comandos. Utiliza el framework Express.js para el backend y tecnologías web modernas para la interfaz de usuario.
 
-## Requisitos
+## Descarga y Configuración
 
-Antes de comenzar, asegúrate de tener instalado:
-
-- [Node.js](https://nodejs.org/): El entorno de tiempo de ejecución de JavaScript.
-- [npm](https://www.npmjs.com/): El administrador de paquetes de Node.js.
-
-## Instalación
-
-Sigue estos pasos para instalar y configurar el proyecto:
-
-1. Clona este repositorio en tu máquina local:
+1. **Clona el Repositorio:**
+   Clona este repositorio en tu máquina local utilizando el siguiente comando:
 
    ```bash
    git clone https://github.com/BrialexMaga/ROBOT.git
 
-2. Navega al directorio del proyecto:
-    
-    ```bash
-    cd ROBOT
+2. **Instala Docker:**
+    Si aun no tienes Docker instalado, descargalo e instalalo desde el sitio web oficial: [Docker](https://www.docker.com/get-started/)
 
-3. Navega al siguiente directorio dentro del proyecto:
-    
-    ```bash
-    cd js\'Status Data'
+## Ejecuta la Aplicación en un Contenedor
 
-4. Instala las dependencias utilizando npm:
+1. **Construye la Imagen del Contenedor:**
+    Navega a la carpeta del proyecto y ejecuta el siguiente comando para construir la imagen del contenedor:
 
     ```bash
-    npm install
+    docker build -t brialex/robot:0.0.1 .
 
-## Uso
-
-Sigue los siguientes paso para iniciar el servidor local y comenzar a trabajar:
-
-1. Navega al siguiente directorio dentro del proyecto:
+2. **O puedes descargar la imagen de Docker Hub:**
 
     ```bash
-    cd js\'Status Data'
+    docker pull brialex/robot:0.0.1
 
-2. Ejecuta el siguiente comando para iniciar el servidor:
+3. **Ejecuta el Contenedor:**
+    Una vez construida/descargada la imagen, inicia el contenedor utilizando el siguiente comando:
+
+    ```bash
+    docker run --name robot -d -p 3000:3000 brialex/robot:0.0.1 
+
+4. **Accede a la Aplicación:**
+    Abre tu navegador y visita 'http://localhost:3000' para ver la aplicación en funcionamiento.
+
+
+## Ejecuta la Aplicación sin Docker
+En caso de no querer usar docker, puedes seguir los siguientes pasos.
+
+1. Clona este repositorio en tu máquina local utilizando el siguiente comando:
+
+   ```bash
+   git clone https://github.com/BrialexMaga/ROBOT.git
+
+2. Entra al directorio del proyecto e instala los modulos de Node.js:
+
+    ```bash
+    npm i
+
+3. Ejecuta el siguiente comando para iniciar el servidor:
 
     ```bash
     npm start
 
-3. Abre tu navegador y visita http://localhost:3000 para ver la aplicación en funcionamiento.
+4. Abre tu navegador y visita 'http://localhost:3000' para ver la aplicación en funcionamiento.
