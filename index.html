@@ -93,7 +93,7 @@
                         Uptime
                     </p>
                     <p class="measure_value" id="uptime">
-                        
+                        <span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span>
                     </p>  
                 </div>
             </div>
@@ -101,11 +101,12 @@
         </div>
         <div class="plug_io">
             <h2>Plug In / Out </h2>
-            <div class="plug_button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plug-zap"><path d="M6.3 20.3a2.4 2.4 0 0 0 3.4 0L12 18l-6-6-2.3 2.3a2.4 2.4 0 0 0 0 3.4Z"/><path d="m2 22 3-3"/><path d="M7.5 13.5 10 11"/><path d="M10.5 16.5 13 14"/><path d="m18 3-4 4h6l-4 4"/></svg>
-            <svg class="hidden" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-unplug"><path d="m19 5 3-3"/><path d="m2 22 3-3"/><path d="M6.3 20.3a2.4 2.4 0 0 0 3.4 0L12 18l-6-6-2.3 2.3a2.4 2.4 0 0 0 0 3.4Z"/><path d="M7.5 13.5 10 11"/><path d="M10.5 16.5 13 14"/><path d="m12 6 6 6 2.3-2.3a2.4 2.4 0 0 0 0-3.4l-2.6-2.6a2.4 2.4 0 0 0-3.4 0Z"/></svg>
-            <p>Connected</p>
-            </div>
+            <button class="plug_button">
+            <svg class="img_on hidden" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plug-zap"><path d="M6.3 20.3a2.4 2.4 0 0 0 3.4 0L12 18l-6-6-2.3 2.3a2.4 2.4 0 0 0 0 3.4Z"/><path d="m2 22 3-3"/><path d="M7.5 13.5 10 11"/><path d="M10.5 16.5 13 14"/><path d="m18 3-4 4h6l-4 4"/></svg>
+            <svg class="img_off" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-unplug"><path d="m19 5 3-3"/><path d="m2 22 3-3"/><path d="M6.3 20.3a2.4 2.4 0 0 0 3.4 0L12 18l-6-6-2.3 2.3a2.4 2.4 0 0 0 0 3.4Z"/><path d="M7.5 13.5 10 11"/><path d="M10.5 16.5 13 14"/><path d="m12 6 6 6 2.3-2.3a2.4 2.4 0 0 0 0-3.4l-2.6-2.6a2.4 2.4 0 0 0-3.4 0Z"/></svg>
+            <p class="plug_text">Disconnected</p>
+
+            </button>
         </div>
     </aside>
     <main>
@@ -126,22 +127,26 @@
             <div class="control_panel" >
                 <h2>Actions</h2>
                 <div class="Actions">
-                    <div class="movement rightbtn">Right</div>
-                    <div class="movement leftbtn">Left</div>
-                    <div class="movement upbtn">Up</div>
-                    <div class="movement downbtn">Down</div>
-                    <div class="movement hibtn">Hi</div>
-                    <div class="movement yesbtn">Yes</div>
-                    <div class="movement nobtn">No</div>
-                    <div class="movement specialbtn">Special</div>
+                    <div class="actionbtns">     
+                        <button class="movement hibtn">Hi</button>
+                        <button class="movement nobtn">No</button>
+                        <button class="movement yesbtn">Yes</button>
+                        <button class="movement specialbtn"></button>
+                    </div>
+                    <div class="basicbtns">
+                        <button class="movement upbtn">Up</button>
+                        <div class="sides">
+                            <button class="movement leftbtn">Left</button>
+                            <button class="movement rightbtn">Right</button>
+                        </div>
+                        <button class="movement downbtn">Down</button>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="description">
             <h2>Description</h2>
-            <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed, repudiandae quod aliquid at odit itaque modi impedit unde. Aspernatur repudiandae deserunt optio sit ad itaque consequuntur quam tempora aperiam! Accusantium.
-            </p>
+            <p class="desc_text"></p>
         </div>
     </div>
 

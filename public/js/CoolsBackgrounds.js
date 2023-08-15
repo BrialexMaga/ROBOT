@@ -25,4 +25,4 @@ element.style.background = `linear-gradient(${degree}deg, ${color1}, ${color2})`
 // Apply the gradient background and additional properties to the #presentation element
 presentation.style.background = `linear-gradient(${degree}deg, ${color1}, ${color2})`;
 presentation.style.webkitBackgroundClip = 'text';
-presentation.style.webkitTextFillColor = 'transparent';
+presentation.style.webkitTextFillColor = '#f2f2f2';
