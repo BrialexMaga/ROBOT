@@ -98,33 +98,46 @@ specialbtn.onclick = function() {
     action_dinamic.classList.add('special');
 }
 
+// Array of image URLs and corresponding descriptions and special moves
 const images = [
-    '/robots/Alexis.png',
-    '/robots/Gir.png',
-    '/robots/RRRitm0.png'
+    {
+        url: '/robots/Alexis.png',
+        description: "Say everything you need, the voice-activated assistant with a twisted sense of humor! While she might seem like your regular helper at first, her secret specialty is in wreaking havoc on the world's economic order. With a simple command, she can obliterate global currencies, turning every foreign exchange into a giant game of Monopoly. Just don't forget to stock up on canned goods before you ask her to 'activate chaos mode'!",
+        specialMove: "Chaos"
+    },
+    {
+        url: '/robots/Gir.png',
+        description: "The robot with a flair for self-destruction! Armed with a mischievous grin and an 'Auto-Destroy' button that's always just a finger's twitch away, Gir is here to solve problems the chaotic way. Need a pickle jar opened? Auto-Destroy! Can't decide what to wear? Auto-Destroy! This robot's specialty is turning any mundane task into a hilarious explosion of confetti and chaos. Warning: Keep it away from fragile vases and serious discussions!",
+        specialMove: "Destroy"
+    },
+    {
+        url: '/robots/RRRitm0.png',
+        description: "Meet the RRR, the dazzling disco darling of the robot world! With moves smoother than butter on a hot pancake, this robot's specialty is busting out dance routines that make even the grooviest humans jealous. From the Electric Slide to the Robot Boogie, RRR is programmed to turn any situation into an impromptu dance-off. Just don't be surprised if it starts doing the moonwalk during a serious business meeting!",
+        specialMove: "Dance"
+    }
 ];
 
-// Function to select a random image and update the <img> src
+// Function to select a random image and update the <img> src, description, and special move
 function setRandomImage() {
+    const imgElement = document.querySelector('.spritesheet');
+    const descElement = document.querySelector('.desc_text');
+    const specialBtn = document.querySelector('.specialbtn');
+    
     const randomIndex = Math.floor(Math.random() * images.length);
-    const randomImageURL = images[randomIndex];
-    action_dinamic.src = randomImageURL;
+    const randomImage = images[randomIndex];
+    
+    imgElement.src = randomImage.url;
+    descElement.textContent = randomImage.description;
+    specialBtn.textContent = randomImage.specialMove;
 }
 
 
 // Random Robot Name Generator
 
-const nombres = [
-    "Manolo", "Byte", "Megatron", "Techtron", "Optimus", "Circuit", "Nano", "PowerDrive", 
-    "Titan", "RoboMax", "Cell", "TechWiz", "DataGenius", "InfoSeeker", "CodeWhiz", "BrainWave", 
-    "TaskMaster", "Helper", "SmartGenie", "DigitalSage", "Analytica", "Insight", "Prodigy", "SkillCraft"
-    ];
-    
-    const complemento = [
-    "cabeza de huevo", "el robot", "Bot", "Guru", "Assistant", "Pro", "Buddy", "Companion", 
-    "Wizard", "Expert", "Sidekick", "Advisor"
-    ];
-    
+const nombres = ["Cybertron", "Opto-X", "Zephyr", "Nexus", "Omega", "Neuro", "Quantum", "Spectron", "Astra", "Xenon", "Orion", "Luna", "Celestia", "Rexis", "Quasar", "Vortex", "Pulsar", "Nebula", "Galactron", "Titanium", "Vesper", "Zion", "Nova", "Luminex", "Infernox", "Ionix", "Astro", "Cypher", "Aether", "Phoenix", "Eclipse", "Sentinel", "Aegis", "Rex", "Nemesis", "Mecha", "Cortex", "Voyager", "Sprocket", "Andromeda", "Xylon", "Exo", "Neptor", "Cosmos", "Galva", "Circuit", "Stellar", "Artemis", "Polaris", "Hyperion", "Quintus", "Helios"];
+
+const complemento = ["Max", "Zeta", "Mk", "Prime", "Alpha", "Delta", "Sigma", "Zeta", "Aurora", "Xenon", "Lunar", "Celestial", "Nova", "Rexis", "Quasar", "Voyager", "Pulsar", "Galactic", "Neptune", "Titan", "Vesper", "Zion", "Nebula", "Luminex", "Inferno", "Ion", "Astro", "Cyper", "Aether", "Phoenix", "Eclipse", "Sentinel", "Aegis", "Rex", "Nemesis", "Mecha", "Cortex", "Voyager", "Sprocket", "Andromeda", "Xylon", "Exo", "Neptor", "Cosmos", "Galva", "Circuit", "Stellar", "Artemis", "Polaris", "Hyperion", "Quintus", "Helios"];
+
     function getRandomElementFromArray(array) {
       const randomIndex = Math.floor(Math.random() * array.length);
       return array[randomIndex];
@@ -133,7 +146,7 @@ const nombres = [
     function generateRandomNumber() {
         const randomNumber = Math.floor(Math.random() * 9 + 1) * 1000;
         if(randomNumber == 9000) {  // Microsoft-Apple Upgrade
-            return 10000; 
+            return 'X Pro Max'; 
         }
       return randomNumber;
     }
@@ -153,11 +166,34 @@ const nombres = [
       return getRandomElementFromArray(complemento);
     }
     
-    
+
+
+    const plugButton = document.querySelector('.plug_button');
+    const imgOn = document.querySelector('.img_on');
+    const imgOff = document.querySelector('.img_off');
+    const plugText = document.querySelector('.plug_text');
+
+    plugButton.onclick = function() {
+        
+        if(plugButton.classList.contains('on')) {
+            plugButton.classList.remove('on');
+            imgOn.classList.add('hidden');
+            imgOff.classList.remove('hidden');
+            plugText.textContent = "Disconnected";
+        }else{
+            plugButton.classList.add('on');
+            imgOn.classList.remove('hidden');
+            imgOff.classList.add('hidden');
+            plugText.textContent = "Connected";
+        }
+
+    }
+
 
 
 // Call the function when the page loads
 window.onload = function() {
     document.getElementById('namerobot').innerText = generateRandomRobotName();
     setRandomImage();
+    document.getElementById('batterylevel').innerText = (Math.random() * 80 +20).toFixed(2) + "%";
   };
