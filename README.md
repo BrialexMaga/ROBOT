@@ -30,10 +30,10 @@ Este proyecto se centra en el desarrollo de un sistema de control para un robot 
     Una vez construida/descargada la imagen, inicia el contenedor utilizando el siguiente comando:
 
     ```bash
-    docker run --name robot -d -p 3000:3000 brialex/robot:0.0.1 
+    docker run --name robot -d -p 80:80 brialex/robot:0.0.1 
 
 4. **Accede a la Aplicación:**
-    Abre tu navegador y visita 'http://localhost:3000' para ver la aplicación en funcionamiento.
+    Abre tu navegador y visita 'http://localhost' para ver la aplicación en funcionamiento.
 
 
 ## Ejecuta la Aplicación sin Docker
@@ -54,4 +54,4 @@ En caso de no querer usar docker, puedes seguir los siguientes pasos.
     ```bash
     npm start
 
-4. Abre tu navegador y visita 'http://localhost:3000' para ver la aplicación en funcionamiento.
+4. Abre tu navegador y visita 'http://localhost' para ver la aplicación en funcionamiento.
